@@ -5,7 +5,7 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-  index: "./index.js",
+  index: "./demo.js",
   html: "./index.html",
   deploy: "/srv/http/tom.shea.at/desktopical-demo/",
   windowsill_dev: "../windowsill/**/*",
