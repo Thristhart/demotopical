@@ -8,8 +8,8 @@ var paths = {
   index: "./index.js",
   html: "./index.html",
   deploy: "/srv/http/tom.shea.at/desktopical-demo/",
-  windowsill_dev: "../windowsill/*/**",
-  desktopical_dev: "../desktopical/*/**"
+  windowsill_dev: "../windowsill/**/*",
+  desktopical_dev: "../desktopical/**/*"
 };
 
 function onError(err) {
