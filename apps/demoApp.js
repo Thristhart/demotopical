@@ -1,5 +1,5 @@
 var DemoApp = function(desktop) {
-  this.demoWindow = desktop.createWindow({
+  this.demoWindow = desktop.createWindow(this, {
     x: 50,
     y: 50,
     title: "Demo App!"
