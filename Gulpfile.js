@@ -7,9 +7,12 @@ var sourcemaps = require('gulp-sourcemaps');
 var paths = {
   index: "./demo.js",
   html: "./index.html",
+  images: "./*.png",
   deploy: "/srv/http/tom.shea.at/desktopical-demo/",
-  windowsill_dev: "../windowsill/**/*",
-  desktopical_dev: "../desktopical/**/*"
+  windowsill_dev_js: "../windowsill/**/*.js",
+  windowsill_dev_static: "../windowsill/**/*.css",
+  desktopical_dev_js: "../desktopical/**/*.js",
+  desktopical_dev_static: "../desktopical/**/*.css"
 };
 
 function onError(err) {
@@ -33,8 +36,8 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.windowsill_dev, paths.desktopical_dev], ['deploy-js']);
-  gulp.watch([paths.html], ['deploy-static']);
+  gulp.watch([paths.index, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
+  gulp.watch([paths.html, paths.windowsill_dev_static, paths.desktopical_dev_static], ['deploy-static']);
 });
 
 gulp.task('deploy-js', ['browserify'], function() {
@@ -43,7 +46,7 @@ gulp.task('deploy-js', ['browserify'], function() {
 });
 
 gulp.task('deploy-static', function() {
-  gulp.src(paths.html)
+  gulp.src([paths.html, paths.images, paths.desktopical_dev_static, paths.windowsill_dev_static])
     .pipe(gulp.dest(paths.deploy));
 });
 
