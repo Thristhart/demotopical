@@ -8,11 +8,13 @@ var paths = {
   index: "./demo.js",
   html: "./index.html",
   images: "./*.png",
-  deploy: "/srv/http/tom.shea.at/desktopical-demo/",
+
   windowsill_dev_js: "../windowsill/**/*.js",
   windowsill_dev_static: "../windowsill/**/*.css",
   desktopical_dev_js: "../desktopical/**/*.js",
-  desktopical_dev_static: "../desktopical/**/*.css"
+  desktopical_dev_static: "../desktopical/**/*.css",
+
+  deploy: "/srv/http/tom.shea.at/desktopical-demo/"
 };
 
 function onError(err) {
