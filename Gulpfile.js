@@ -8,6 +8,7 @@ var paths = {
   index: "./demo.js",
   html: "./index.html",
   images: "./*.png",
+  apps: "./apps/*.js"
 
   windowsill_dev_js: "../windowsill/**/*.js",
   windowsill_dev_static: "../windowsill/**/*.css",
@@ -38,7 +39,7 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
+  gulp.watch([paths.index, paths.apps, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
   gulp.watch([paths.html, paths.windowsill_dev_static, paths.desktopical_dev_static], ['deploy-static']);
 });
 
