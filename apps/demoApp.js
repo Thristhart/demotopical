@@ -7,7 +7,7 @@ var DemoApp = function(desktop) {
   this.demoWindow.body.innerHTML = "<span class='posDisplay'>0, 0</span>";
   this.on("tick", function() {
     var posElement = this.demoWindow.body.querySelector(".posDisplay");
-    posElement.textContent = this.demoWindow.x + ", " + this.demoWindow.y;
+    posElement.textContent = Math.round(this.demoWindow.x) + ", " + Math.round(this.demoWindow.y);
   });
 };
 DemoApp.shortname = "demoapp";
