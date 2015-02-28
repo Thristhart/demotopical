@@ -8,7 +8,7 @@ var paths = {
   index: "./demo.js",
   html: "./index.html",
   images: "./*.png",
-  apps: "./apps/*.js"
+  apps: "./apps/*.js",
 
   windowsill_dev_js: "../windowsill/**/*.js",
   windowsill_dev_static: "../windowsill/**/*.css",
