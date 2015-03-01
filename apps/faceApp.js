@@ -72,7 +72,7 @@ var FaceApp = function(desktop) {
 
   });
   /* interact.js resizemove event */
-  this.faceWindow.resizeInteraction.on("resizemove", function(event) {
+  this.faceWindow.on("resizemove", function(event) {
     this.canvas.width = this.faceWindow.body.clientWidth;
     this.canvas.height = this.faceWindow.body.clientWidth;
   }.bind(this));
