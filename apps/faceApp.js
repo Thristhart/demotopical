@@ -77,7 +77,7 @@ var FaceApp = function(desktop) {
     this.canvas.height = this.faceWindow.body.clientWidth;
   }.bind(this));
 };
-FaceApp.shortname = "faceapp";
+FaceApp.shortname = "face";
 FaceApp.fullname = "Expressive Face";
 FaceApp.description = "A face that reacts to user actions";
 

@@ -10,7 +10,7 @@ var DemoApp = function(desktop) {
     posElement.textContent = Math.round(this.demoWindow.x) + ", " + Math.round(this.demoWindow.y);
   });
 };
-DemoApp.shortname = "demoapp";
+DemoApp.shortname = "demo";
 DemoApp.fullname = "Demo Application";
 DemoApp.description = "Provides a demonstration of basic application functions";
 
