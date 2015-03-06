@@ -3,10 +3,12 @@ var browserify = require('browserify');
 var transform = require('vinyl-transform');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
   index: "./demo.js",
   html: "./index.html",
+  stylesheet: "./demo.css",
   images: "./*.png",
   apps: "./apps/*.js",
 
@@ -39,7 +41,7 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.apps, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
+  gulp.watch([paths.index, paths.stylesheet, paths.apps, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
   gulp.watch([paths.html, paths.windowsill_dev_static, paths.desktopical_dev_static], ['deploy-static']);
 });
 
@@ -49,7 +51,10 @@ gulp.task('deploy-js', ['browserify'], function() {
 });
 
 gulp.task('deploy-static', function() {
-  gulp.src([paths.html, paths.images, paths.desktopical_dev_static, paths.windowsill_dev_static])
+  gulp.src([paths.html, paths.images])
+    .pipe(gulp.dest(paths.deploy));
+  gulp.src([paths.stylesheet, paths.desktopical_dev_static, paths.windowsill_dev_static])
+    .pipe(autoprefixer())
     .pipe(gulp.dest(paths.deploy));
 });
 
