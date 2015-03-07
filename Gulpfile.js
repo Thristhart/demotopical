@@ -41,8 +41,8 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch([paths.index, paths.stylesheet, paths.apps, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
-  gulp.watch([paths.html, paths.windowsill_dev_static, paths.desktopical_dev_static], ['deploy-static']);
+  gulp.watch([paths.index, paths.apps, paths.windowsill_dev_js, paths.desktopical_dev_js], ['deploy-js']);
+  gulp.watch([paths.html, paths.stylesheet, paths.windowsill_dev_static, paths.desktopical_dev_static], ['deploy-static']);
 });
 
 gulp.task('deploy-js', ['browserify'], function() {
