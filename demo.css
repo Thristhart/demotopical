@@ -2,7 +2,7 @@ body {
   margin: 0;
   overflow: hidden;
 }
-.desktopical {
+.desktopical.desktop {
   height: 100%;
   width: 100%;
 }
@@ -21,3 +21,10 @@ body {
 .windowsill.titlebar {
   background: cornflowerblue;
 }
+.desktopical.menuButton {
+  border-color: cornflowerblue;  
+}
+.windowsill.window {
+  border: 1px solid cornflowerblue;
+}
+
