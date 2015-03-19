@@ -1,4 +1,4 @@
-var Desktopical = require('../desktopical');
+var Desktopical = require('desktopical');
 
 
 var Desktop = new Desktopical();
