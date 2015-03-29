@@ -9,7 +9,7 @@ var paths = {
   index: "./demo.js",
   html: "./index.html",
   stylesheet: "./demo.css",
-  images: "./*.png",
+  images: "./*.+(png|svg)",
   apps: "./apps/*.js",
 
   windowsill_dev_js: "../windowsill/**/*.js",
