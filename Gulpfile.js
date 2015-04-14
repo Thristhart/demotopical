@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
-var transform = require('vinyl-transform');
+var vss = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
@@ -27,17 +28,13 @@ function onError(err) {
 }
 
 gulp.task('browserify', function() {
-  var browserifyTransform = transform(function(filename) {
-    var b = browserify({
-      entries: filename,
+  return browserify({
+      entries: paths.index,
       debug: true
-    });
-    return b.bundle();
-  });
-
-  return gulp.src(paths.index)
-    .pipe(browserifyTransform)
+    }).bundle()
     .on('error', onError)
+    .pipe(vss(paths.index))
+    .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
     .pipe(sourcemaps.write())
@@ -72,4 +69,4 @@ gulp.task('clean', function(callback) {
 
 gulp.task('deploy', ['deploy-js', 'deploy-static']);
 
-gulp.task('default', ['browserify', 'browserify-dependencies']);
+gulp.task('default', ['browserify']);
